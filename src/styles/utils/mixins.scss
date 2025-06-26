@@ -1,0 +1,63 @@
+@mixin on-tablet-small {
+  @media (min-width: 540px) {
+    @content;
+  }
+}
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin on-big-desktop {
+  @media (min-width: 1250px) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  --columns: 4;
+
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet-small {
+    --columns: 12;
+
+    column-gap: 16px;
+  }
+
+  @include on-desktop {
+    --columns: 24;
+  }
+}
+
+@mixin button-reset-style {
+  height: 40px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  padding: 8px 16px;
+  border: 1px solid var(--element-border-color);
+  border-radius: 4px;
+  background: var(--surface-button);
+  color: var(--primary-grey-color);
+  cursor: pointer;
+  transition: 
+    border-color 0.3s ease, 
+    background-color 0.3s ease, 
+    color 0.3s ease;
+
+  &:hover {
+    background-color: var(--element-hover-bg-color);
+    box-shadow: var(--button-hover);
+  }
+}
+

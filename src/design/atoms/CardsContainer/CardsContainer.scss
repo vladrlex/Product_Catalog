@@ -1,0 +1,6 @@
+@use '/src/styles/utils/mixins.scss' as *;
+.cards-container-grid {
+  grid-column: 1 / -1;
+  @include page-grid;
+  row-gap: 40px;
+}

@@ -1,0 +1,63 @@
+@use 'utils/theme' as *;
+
+.simplebar-scrollbar {
+  transition: none;
+  &::before {
+    background: var(--primary-grey-color) !important;
+    opacity: 0;
+  }
+
+  &.simplebar-visible::before {
+    opacity: 0.5;
+  }
+}
+
+/* Стилі для темної теми */
+html[data-theme='dark'] {
+  .simplebar-scrollbar {
+    &::before {
+      background: var(--action-button) !important;
+    }
+  }
+}
+
+/* Налаштування анімації руху скролу */
+.simplebar-content-wrapper {
+  scroll-behavior: auto !important;
+  -webkit-overflow-scrolling: auto !important;
+  scroll-timeline: none !important;
+  scroll-snap-type: none !important;
+  overscroll-behavior: none !important;
+}
+
+.simplebar-content {
+  scroll-snap-type: none !important;
+  overscroll-behavior: contain !important;
+}
+
+/* Адаптивні стилі */
+@media (max-width: 768px) {
+  .simplebar-scrollbar {
+    width: 6px !important;
+    right: 4px !important;
+  }
+
+  .simplebar-track {
+    width: 10px !important;
+    right: 2px !important;
+  }
+}
+
+/* Анімація появи скролбару */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.simplebar-track.simplebar-visible {
+  animation: fadeIn 0.3s linear;
+}

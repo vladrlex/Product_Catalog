@@ -1,0 +1,99 @@
+@use '../../../styles/utils/mixins.scss' as *;
+@use '../../../styles/utils/variables.scss' as *;
+
+.product-carousel {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+
+  &__container {
+    @include page-grid;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-column: 1 / -1;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    @include on-tablet {
+      font-size: 32px;
+    }
+    @include on-desktop {
+      font-size: 32px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  &__button {
+    width: 32px;
+    height: 32px;
+    background-color: var(--surface-button);
+    border: 1px solid var(--element-border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: $transition-behavior;
+    padding: 0;
+
+    &:hover {
+      border-color: var(--icons-outline-color);
+    }
+
+    &:active {
+      border-color: #0f0f11;
+    }
+  }
+
+  &__swiper-wrapper {
+    position: relative;
+    grid-column: 1 / -1;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__swiper {
+    width: 100%;
+  }
+
+  &__slide {
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: var(--white);
+    height: auto;
+    overflow: hidden;
+    transition: $transition-behavior;
+    width: 212px;
+
+    @include on-tablet-small {
+      width: 237px;
+    }
+
+    @include on-tablet {
+      width: 237px;
+    }
+
+    @include on-desktop {
+      width: 272px;
+    }
+  }
+}
+
+.swiper-slide.product-carousel__slide {
+  height: auto;
+}
+
+.nav-arrow-icon-phones {
+  fill: var(--primary-grey-color);
+}

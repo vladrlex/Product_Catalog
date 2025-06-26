@@ -1,0 +1,45 @@
+@use '../../../styles/utils/mixins' as *;
+@use '../../../styles/utils/variables' as *;
+@use '../../../styles/utils/theme' as *;
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 0;
+  list-style: none;
+  margin: 0;
+}
+
+.separator {
+  color: var(--primary-grey-color);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--secondary-grey-color);
+  font-weight: $text-weight-regular;
+  transition: $transition-behavior;
+
+  &:hover {
+    color: var(--primary-grey-color);
+
+    .icon {
+      color: var(--primary-grey-color);
+    }
+  }
+}
+
+.current {
+  color: var(--secondary-grey-color) !important;
+  text-overflow: ellipsis !important;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: var(--secondary-grey-color);
+  transition: $transition-behavior;
+} 

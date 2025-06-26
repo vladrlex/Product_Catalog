@@ -1,0 +1,144 @@
+@import '../../../styles/utils/mixins.scss';
+@import '../../../styles/utils/variables.scss';
+
+.banner-outer-container {
+  grid-column: 1 / -1;
+  @include page-grid;
+  position: relative;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.slider-container {
+  @include page-grid;
+
+  grid-column: 1 / -1;
+  align-items: center;
+}
+
+.swiper-container {
+  width: 100%;
+  grid-column: 1 / -1;
+  background-color: #f5f7ff;
+  position: relative;
+
+  height: 400px;
+
+  @include on-tablet {
+    grid-column: 2 / 12;
+  }
+
+  @include on-desktop {
+    grid-column: 2 / 24;
+  }
+}
+
+.mySwiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-image-wrapper {
+  grid-column: 2 / 12;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.custom-nav-button {
+  display: none;
+
+  @include on-tablet {
+    display: flex;
+    min-width: 32px;
+    max-width: 48px;
+    grid-column: span 1;
+    height: 100%;
+    border: 1px solid var(--element-border-color);
+    background-color: var(--white);
+    justify-self: center;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    cursor: pointer;
+
+    &:hover {
+      border-color: #b4bdc4;
+    }
+  }
+
+  &.prev-button {
+    background-color: var(--surface-button);
+
+    @include on-tablet {
+      grid-column: 1 / 2;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 2;
+    }
+  }
+
+  &.next-button {
+    background-color: var(--surface-button);
+
+    @include on-tablet {
+      grid-column: 12 / 13;
+    }
+
+    @include on-desktop {
+      grid-column: 24 / 25;
+    }
+  }
+}
+
+.custom-pagination {
+  grid-column: 1 / -1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  height: 4px;
+  width: 100%;
+}
+
+.swiper-pagination-bullet {
+  width: 14px;
+  height: 4px;
+  background-color: var(--secondary-grey-color);
+  opacity: 1;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--action-button);
+}
+
+.nav-arrow-icon {
+  stroke: var(--primary-grey-color);
+}

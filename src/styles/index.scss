@@ -1,0 +1,41 @@
+@use 'utils/theme' as *;
+@use 'utils/mixins' as *;
+@use 'utils/variables' as *;
+@use 'utils/normalize' as *;
+@import '../design/templates/global-layout';
+
+//atoms
+@import '../design/atoms/Typography/H1/H1';
+@import '../design/atoms/Typography/H2/H2';
+@import '../design/atoms/Typography/H3/H3';
+@import '../design/atoms/Typography/H4/H4';
+@import '../design/atoms/Typography/P/P';
+@import '../design/atoms/Typography/P_Small/P_Small';
+@import '../design/atoms/Typography/P_UpperCase/P_UpperCase';
+@import '../design/atoms/PrimaryButton/PrimaryButton';
+@import '../design/atoms/FavouriteButton/FavouriteButton.scss';
+@import '../design/atoms/Switcher/Switcher.scss';
+@import '../design/atoms/Breadcrumbs/Breadcrumbs.module.scss';
+@import '../design/atoms/CompareButton/CompareButton.scss';
+@import '../design/atoms/Select/Select.scss';
+
+
+//molecules
+@import '../design/molecules/Specs/Specs';
+
+//organisms
+@import '../design/organisms/Header/Header';
+@import '../design/organisms/SwiperBanner/SwiperBanner';
+@import '../design/organisms/SwiperPhone/SwiperPhone';
+@import '../design/organisms/ProductCard/ProductCard';
+@import '../design/organisms/Footer/Footer.scss';
+@import '../design/organisms/CompareTable/CompareTable.scss';
+
+
+//pages
+@import '../pages/HomePage/HomePage.scss';
+@import '../pages/Catalogs/MainCatalog/ProductsCatalog.scss';
+@import '../pages/ProductPage/ProductPage.scss';
+@import '../pages/ErrorPage/ErrorPage.scss';
+@import '../pages/ComparePage/ComparePage.scss';
+

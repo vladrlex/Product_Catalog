@@ -1,0 +1,201 @@
+@use '/src/styles/utils/variables.scss' as *;
+@use '/src/styles/utils/mixins.scss' as *;
+
+.nav {
+  height: 64px;
+  background-color: var(--white);
+  border-bottom: $element-border-default;
+  margin-bottom: 24px;
+  position: sticky;
+  top: 0;
+  z-index: 11;
+  transition: $transition-behavior;
+
+  &--mobile {
+    height: 100dvh;
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--white);
+
+    transform: translateX(-100%);
+    transition: $transition-behavior;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &--mobile.active {
+    height: 100dvh;
+    z-index: 2;
+
+    transform: translateX(0);
+    transition: $transition-behavior;
+  }
+
+  &__container {
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__left__container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @include on-desktop {
+      gap: 24px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding-inline: 16px;
+  }
+
+  &__logo-image {
+    height: 35px;
+  }
+
+  &__menu {
+    display: flex;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    height: 64px;
+
+    @include on-desktop {
+      gap: 64px;
+    }
+
+    &--mobile {
+      margin-bottom: auto;
+    }
+
+    &--mobile-links {
+      display: flex;
+      margin-inline: auto;
+      flex-direction: column;
+      align-items: center;
+
+      list-style: none;
+
+      pointer-events: none;
+    }
+
+    &--mobile--li {
+      width: fit-content;
+      padding-bottom: 16px;
+    }
+  }
+
+  &__menu-link {
+    display: flex;
+    align-items: center;
+    color: var(--secondary-grey-color);
+
+    &--mobile {
+      display: block;
+      text-decoration: none;
+      height: 27px;
+      pointer-events: all;
+
+      color: var(--secondary-grey-color);
+    }
+  }
+
+  &__icons {
+    display: flex;
+  }
+
+  &__icon-link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    text-decoration: none;
+    border-left: $element-border-default;
+  }
+
+  &__icon {
+    position: relative;
+    object-fit: contain;
+  }
+
+  &__icon-link-quantity {
+    height: 14px;
+    width: 14px;
+
+    position: absolute;
+    bottom: 32px;
+    left: 54%;
+
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--highlight-red);
+
+    @include on-tablet {
+      left: 32px;
+    }
+
+    &--text {
+      font-size: 9px;
+      color: white;
+    }
+  }
+}
+
+.link__effects {
+  border-bottom: 2px solid transparent;
+  transition: $transition-behavior;
+
+  &:hover {
+    color: var(--primary-grey-color);
+    border-bottom: $link-hover-active-border;
+  }
+
+  &.active {
+    color: var(--primary-grey-color);
+    border-bottom: $link-hover-active-border;
+  }
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: $element-border-default;
+  margin-bottom: 24px;
+}
+
+.bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+
+  &__link {
+    height: 64px;
+    flex-grow: 1;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: $element-border-default;
+    border-top: $element-border-default;
+  }
+}

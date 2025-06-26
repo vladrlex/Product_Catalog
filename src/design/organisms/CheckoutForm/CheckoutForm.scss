@@ -1,0 +1,336 @@
+@import '../../../styles/utils/mixins.scss';
+
+.checkout-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.checkout {
+  padding: 16px;
+  width: 95%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--white);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-height: 90vh;
+  overflow-y: auto;
+
+  
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--action-button);
+    border-radius: 4px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--primary-grey-color);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__section {
+    border: 1px solid var(--checkout);
+    padding: 16px;
+    background-color: var(--white);
+  }
+
+  &__section-title {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: var(--primary-grey-color);
+  }
+
+  &__field {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary-grey-color);
+  }
+
+  &__input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--checkout);
+    font-size: 16px;
+    transition: border-color 0.2s;
+    background-color: var(--surface-card);
+    color: var(--primary-grey-color);
+
+    &:focus {
+      border-color: var(--action-button);
+      outline: none;
+      background-color: var(--surface-card);
+    }
+
+    &:not(:placeholder-shown) {
+      background-color: var(--surface-card);
+    }
+
+    &::placeholder {
+      color: var(--secondary-grey-color);
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 12px;
+    border: 1px solid var(--checkout);
+    font-size: 16px;
+    resize: vertical;
+    transition: border-color 0.2s;
+    background-color: var(--surface-card);
+    color: var(--primary-grey-color);
+
+    &:focus {
+      border-color: var(--action-button);
+      outline: none;
+      background-color: var(--surface-card);
+    }
+
+    &:not(:placeholder-shown) {
+      background-color: var(--surface-card);
+    }
+
+    &::placeholder {
+      color: var(--secondary-grey-color);
+    }
+  }
+
+  &__radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  &__radio {
+    display: flex;
+    align-items: center;
+  }
+
+  &__radio-input {
+    margin-right: 8px;
+    accent-color: var(--action-button);
+  }
+
+  &__radio-label {
+    font-size: 16px;
+    color: var(--primary-grey-color);
+  }
+
+  &__card-details {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--checkout);
+  }
+
+  &__summary {
+    padding: 20px;
+  }
+
+  &__total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__total-price {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+    letter-spacing: -1%;
+    text-align: center;
+    color: var(--primary-grey-color);
+  }
+
+  &__total-description {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: var(--secondary-grey-color);
+    margin-top: 4px;
+  }
+
+  &__hr-line {
+    height: 1px;
+    background-color: var(--checkout);
+    margin-bottom: 24px;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-direction: column;
+  }
+
+  &__button {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+
+    &--back {
+      background-color: var(--surface-card);
+      border: 1px solid var(--checkout);
+      color: var(--primary-grey-color);
+
+      &:hover {
+        background-color: var(--element-hover-bg-color);
+      }
+    }
+
+    &--submit {
+      background-color: var(--action-button);
+      color: var(--white);
+
+      &:hover {
+        box-shadow: var(--button-hover);
+      }
+    }
+  }
+
+  &__autocomplete {
+    position: relative;
+  }
+
+  &__suggestions {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: var(--surface-card);
+    border: 1px solid var(--checkout);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__suggestion-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--checkout);
+    color: var(--primary-grey-color);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: var(--element-hover-bg-color);
+    }
+  }
+}
+
+.option {
+  width: 100%;
+  color: var(--primary-grey-color);
+  background-color: var(--surface-card);
+}
+
+.checkout__input--error {
+  border-color: #ff3b30;
+}
+
+.checkout__error-message {
+  border-color: #ff3b30;
+  color: #ff3b30;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Chrome, Safari autofill background color fix */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--primary-grey-color) !important;
+  background-color: var(--surface-card) !important;
+  box-shadow: 0 0 0px 1000px var(--surface-card) inset !important;
+}
+
+/* Firefox autofill fix */
+input:autofill,
+select:autofill,
+textarea:autofill {
+  background-color: var(--surface-card) !important;
+  color: var(--primary-grey-color) !important;
+}
+
+/* Additional specificity for checkout inputs */
+.checkout__input:-webkit-autofill,
+.checkout__input:-webkit-autofill:hover,
+.checkout__input:-webkit-autofill:focus,
+.checkout__input:-webkit-autofill:active,
+.checkout__select:-webkit-autofill,
+.checkout__select:-webkit-autofill:hover,
+.checkout__select:-webkit-autofill:focus,
+.checkout__textarea:-webkit-autofill,
+.checkout__textarea:-webkit-autofill:hover,
+.checkout__textarea:-webkit-autofill:focus {
+  border: 1px solid var(--checkout) !important;
+}
+
+/* When autofilled inputs are focused */
+.checkout__input:-webkit-autofill:focus,
+.checkout__select:-webkit-autofill:focus,
+.checkout__textarea:-webkit-autofill:focus {
+  border-color: var(--action-button) !important;
+}

@@ -1,0 +1,364 @@
+.product {
+  position: relative;
+  grid-column: 1/-1;
+  @include page-grid;
+
+  &__breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    grid-column: 1/-1;
+    justify-content: start;
+    margin-bottom: 24px !important;
+
+    @include on-tablet {
+      margin-bottom: 40px !important;
+    }
+
+    @include on-big-desktop {
+      width: 1200px;
+    }
+  }
+
+  &__button-back {
+    grid-column: 1/-1;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    margin-bottom: 32px;
+  }
+
+  &__top-details {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 7/12;
+    }
+
+    @include on-desktop {
+      grid-column: 14/20;
+    }
+  }
+
+  &__tech-specs {
+    grid-column: 1/-1;
+
+    @include on-desktop {
+      grid-column: 14/24;
+    }
+  }
+
+  &__specs {
+    margin-bottom: 56px;
+
+    @include on-tablet {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__swiper {
+    grid-column: 1/-1;
+    margin-bottom: 56px;
+
+    @include on-tablet {
+      margin-bottom: 64px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__loader {
+    grid-column: 1/-1;
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.slider {
+  &__outer-container {
+    grid-column: 1/-1;
+    justify-self: center;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 16px;
+    height: fit-content;
+    width: 288px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      gap: 0;
+      width: 100%;
+      grid-column: 1/7;
+      flex-direction: row;
+    }
+
+    @include on-desktop {
+      width: 100%;
+      grid-column: 1/12;
+      flex-direction: row;
+      justify-content: space-between;
+
+      margin-bottom: 80px;
+    }
+  }
+
+  &__swiper-thumbnails {
+    grid-column: 1/-1;
+    display: flex;
+
+    @include on-tablet {
+      grid-column: 1/2;
+      height: 288px;
+      min-width: 51px;
+    }
+
+    @include on-desktop {
+      grid-column: 1/4;
+      height: 464px;
+      min-width: 80px;
+    }
+  }
+
+  &__swiper-preview {
+    height: 288px;
+    box-sizing: border-box;
+
+    @include on-tablet {
+      grid-column: 2/7;
+    }
+
+    @include on-desktop {
+      height: 464px;
+      grid-column: 4/12;
+    }
+  }
+
+  &__image {
+    &--preview {
+      height: 288px;
+      width: 288px;
+      object-fit: contain !important;
+
+      @include on-desktop {
+        height: 464px;
+        width: 464px;
+      }
+    }
+
+    &--thumbnail {
+      width: 51px;
+      height: 51px;
+      object-fit: contain;
+      cursor: pointer;
+
+      @include on-desktop {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+}
+
+.colorpicker {
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--element-border-color);
+
+  &__text-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  &__available {
+    color: var(--secondary-grey-color);
+  }
+
+  &__item-id {
+    color: var(--icons-outline-color);
+
+    @include on-desktop {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  &__color-container {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__color-ind-container{
+    width: 30px;
+    height: 30px;
+    border: $element-border-default;
+    border-radius: 50%;
+    display: flex;
+    padding: 2px;
+
+    &:hover {
+      border: $colorpicker-border-hover;
+      cursor: pointer;
+    }
+
+    &--active {
+      border: $colorpicker-border-active;
+    }
+  }
+
+  &__color {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+    &--black {
+      background-color: black;
+    }
+    &--gold {
+      background-color: #F6E0C9;
+    }
+    &--yellow {
+      background-color: lightyellow;
+    }
+    &--green {
+      background-color: lightgreen;
+    }
+    &--midnightgreen {
+      background-color: #004953;
+    }
+    &--silver {
+      background-color: #F0F2F2;
+    }
+    &--spacegray {
+      background-color: darkgray;
+    }
+    &--red {
+      background-color: red;
+    }
+    &--white {
+      background-color: white;
+    }
+    &--purple {
+      background-color: lavender;
+    }
+    &--coral {
+      background-color: lightcoral;
+    }
+    &--rose-gold {
+      background-color: #f7c5ad;
+    }
+    &--midnight {
+      background-color: #222930;
+    }
+    &--spaceblack {
+      background-color: black;
+    }
+    &--blue {
+      background-color: lightblue;
+    }
+    &--pink {
+      background-color: pink;
+    }
+    &--sierrablue {
+      background-color: lightblue;
+    }
+    &--graphite {
+      background-color: grey;
+    }
+    &--space-gray {
+      background-color: darkgray;
+    }
+    &--sky-blue {
+      background-color: lightblue;
+    }
+    &--starlight {
+      background-color: white;
+    }
+  }
+}
+
+.capacity {
+  border-bottom: 1px solid var(--element-border-color);
+  margin-bottom: 32px;
+
+  &__text {
+    color: var(--secondary-grey-color);
+    margin-bottom: 8px;
+  }
+
+  &__options {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__option {
+    padding-inline: 8px;
+    height: 32px;
+    line-height: 32px;
+    border: $element-border-default;
+    margin-bottom: 24px;
+    cursor: pointer;
+
+    &--filled {
+      background-color: var(--primary-grey-color);
+      color: var(--white);
+    }
+  }
+}
+
+.price {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 16px;
+
+  &__full {
+    color: var(--secondary-grey-color);
+    text-decoration: line-through;
+  }
+}
+
+.about {
+  grid-column: 1/-1;
+
+  @include on-desktop {
+    grid-column: 1/12;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+  }
+}
+
+.buttons {
+  grid-column: 1/-1;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 56px;
+
+  &__title {
+    border-bottom: $element-border-default;
+    height: 42px;
+  }
+
+  @include on-tablet {
+    margin-bottom: 64px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 80px;
+  }
+}

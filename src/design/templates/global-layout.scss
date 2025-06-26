@@ -1,0 +1,26 @@
+.container-grid-rows {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+}
+
+.container-margin {
+  max-width: 1200px;
+  margin: 0 16px;
+
+  @include on-tablet {
+    margin: 0 24px;
+  }
+
+  @include on-desktop {
+    margin: 0 32px;
+  }
+
+  @include on-big-desktop {
+    margin: 0 auto;
+  }
+}
+
+.global-container {
+  @include page-grid;
+}

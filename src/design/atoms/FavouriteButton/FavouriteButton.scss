@@ -1,0 +1,28 @@
+.favourite {
+  background-image: url(/public/icons/favourites-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25px 25px;
+  transition: $transition-behavior;
+  stroke: #fff;
+
+  width: 40px;
+  height: 40px;
+
+  background-color: transparent;
+  cursor: pointer;
+
+  &--dark {
+    background-image: url(/public/icons/heart-icon-dark.svg);
+  }
+
+  &--active {
+    background-image: url(/public/icons/favourites-icon-filled.svg);
+  }
+
+  @include on-desktop {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

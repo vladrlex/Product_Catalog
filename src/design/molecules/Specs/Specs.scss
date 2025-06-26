@@ -1,0 +1,18 @@
+.specs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.spec-name {
+  color: var(--secondary-grey-color);
+}
+
+.spec-value {
+  color: var(--primary-grey-color);
+}

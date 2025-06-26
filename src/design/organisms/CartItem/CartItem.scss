@@ -1,0 +1,149 @@
+@import '../../../styles/utils/mixins.scss';
+@import '../../../styles/utils/theme.scss';
+
+.cart-item {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  border: solid var(--element-border-color) 1px;
+  background-color: var(--surface-card);
+  padding: 16px;
+
+  @include on-tablet-small {
+    flex-direction: row;
+    padding: 24px;
+  }
+
+  @include on-desktop {
+    grid-column: 1 / 17;
+    padding: 24px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    position: relative;
+  }
+
+  &__image-container {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__info {
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    line-height: 21px;
+    color: var(--primary-grey-color);
+  }
+
+  &__remove-button {
+    min-width: 16px;
+    height: 16px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--icons-outline-color);
+    margin-right: 10px;
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      color: var(--primary-grey-color);
+      transform: scale(1.2);
+    }
+
+    @include on-desktop {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__controls {
+    gap: 24px;
+    min-width: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__quantity {
+    display: flex;
+    color: var(--primary-grey-color);
+  }
+
+  &__quantity-button {
+    color: var(--primary-grey-color);
+    width: 32px;
+    height: 32px;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+    border: var(--icons-outline-color) solid 1px;
+    transition: background-color 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background-color: var(--element-border-color);
+    }
+
+    &--disabled,
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+      color: var(--icons-outline-color);
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &__quantity-value {
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  &__price {
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 40px;
+    color: var(--primary-grey-color);
+  }
+}

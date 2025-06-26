@@ -1,0 +1,24 @@
+.primary-button {
+  flex-grow: 1;
+  height: 40px;
+  background-color: var(--action-button);
+  border: none;
+
+  font-weight: $text-weight-bold;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--white);
+
+  cursor: pointer;
+  transition: $transition-behavior;
+
+  &:hover {
+    box-shadow: var(--button-hover);
+  }
+
+  &--active {
+    background-color: var(--surface-button);
+    color: var(--highlight-green);
+    border: 1px solid var(--element-border-color);
+  }
+}

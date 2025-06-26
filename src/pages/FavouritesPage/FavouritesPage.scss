@@ -1,0 +1,32 @@
+@use '../../styles/utils/mixins' as *;
+@use '../../styles/utils/variables' as *;
+@use '../../styles/utils/theme' as *;
+
+.favourites-page {
+  @include page-grid;
+  margin-bottom: 80px;
+  grid-column: 1/-1;
+
+  &__breadcrumbs {
+    grid-column: 1/-1;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    margin-bottom: 8px;
+    padding-top: 40px;
+  }
+
+  &__count {
+    grid-column: 1/-1;
+    margin-bottom: 40px;
+    color: var(--secondary-grey-color);
+  }
+
+  &__empty {
+    grid-column: 1/-1;
+    text-align: center;
+    color: var(--secondary-grey-color);
+  }
+}

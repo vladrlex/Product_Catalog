@@ -1,0 +1,121 @@
+@import '../../styles/utils/mixins.scss';
+
+.cart {
+  @include page-grid;
+  grid-column: 1/-1;
+
+  &__title {
+    grid-column: 1/-1;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 32px;
+  }
+
+  &__empty-message {
+    grid-column: 1/-1;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--secondary-grey-color);
+    text-align: center;
+  }
+
+  &__items-container {
+    grid-column: 1/-1;
+    @include page-grid;
+    row-gap: 20px;
+
+    margin-bottom: 56px;
+
+    @include on-tablet {
+      margin-bottom: 64px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__checkout-container {
+    grid-column: 1 / -1;
+
+    border: 1px solid var(--checkout);
+    padding: 24px;
+
+    @include on-desktop {
+      grid-column: 17 / 25;
+      grid-row: 1 / 3;
+      max-height: 206px;
+    }
+  }
+
+  &__total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__total-price {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+    letter-spacing: -1%;
+    text-align: center;
+    color: var(--primary-grey-color);
+  }
+
+  &__total-description {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: var(--secondary-grey-color);
+    margin-top: 4px;
+  }
+
+  &__checkout-button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: var(--action-button);
+    color: var(--white);
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: center;
+
+    &:hover {
+      box-shadow: var(--button-hover);
+    }
+  }
+
+  &__empty {
+    grid-column: 1/-1;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__empty-animation {
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+  }
+
+}
+
+.hr-line-checkout {
+  height: 1px;
+  background-color: var(--checkout);
+  margin-bottom: 24px;
+}

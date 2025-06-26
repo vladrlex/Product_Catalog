@@ -1,0 +1,27 @@
+.error {
+  grid-column: 1/-1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  @include on-big-desktop {
+    min-width: 1200px
+  }
+
+  &__button-back {
+    grid-column: 1/-1;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    color: var(--primary-grey-color);
+  }
+
+  &__picture {
+    width: 288px;
+    height: 288px;
+    object-fit: contain;
+  }
+}

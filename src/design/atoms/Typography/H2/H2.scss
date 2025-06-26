@@ -1,0 +1,14 @@
+.h2-title {
+  font-size: 22px;
+  line-height: 31px;
+  font-weight: $text-weight-bold;
+  letter-spacing: 0;
+  color: var(--primary-grey-color);
+
+  @include on-tablet {
+    font-size: 32px;
+    line-height: 41px;
+    font-weight: $text-weight-bold;
+    letter-spacing: -0.01em;
+  }
+}

@@ -1,0 +1,90 @@
+@use '/src/styles/utils/variables.scss' as *;
+
+.footer {
+  height: 257px;
+  border-top: $element-border-default;
+  background-color: var(--white);
+  transition: $transition-behavior;
+
+  @include on-tablet-small {
+    height: 96px;
+  }
+
+  &__inner-container {
+    margin-block: 32px;
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include on-tablet-small {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo-link {
+    grid-column: 1/-1;
+    text-decoration: none;
+    align-self: flex-start;
+  }
+
+  &__logo-image {
+    width: 89px;
+  }
+
+  &__links {
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include on-tablet-small {
+      flex-direction: row;
+    }
+
+    @include on-desktop {
+      gap: 105px;
+    }
+  }
+
+  &__link {
+    text-transform: uppercase;
+    color: var(--secondary-grey-color);
+    transition: $transition-behavior;
+
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 11px;
+    letter-spacing: 4%;
+
+    &:hover {
+      color: var(--primary-grey-color);
+    }
+  }
+
+  &__back-to-top {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--secondary-grey-color);
+    transition: $transition-behavior;
+    cursor: pointer;
+
+    &--icon {
+      border: $element-border-default;
+      padding: 7px;
+      transition: $transition-behavior;
+    }
+
+    &:hover {
+      color: var(--primary-grey-color);
+
+      .footer__back-to-top--icon {
+        border: $element-border-hover;
+      }
+    }
+  }
+}
